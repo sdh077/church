@@ -62,10 +62,10 @@ const index = () => {
           </div>
           <div className="col-lg-4 mb-5 mb-lg-0 text-center">
             <h5 className="mb-2">지도 열기</h5>
-            <p className="mb-3 small">
+            <div className="mb-3 small">
               <div className="btn btn-secondary" onClick={() => Click("naver")}>네이버맵에서 열기</div>
               <div className="btn btn-secondary" onClick={() => Click("kakao")}>카카오맵에서 열기</div>
-            </p>
+            </div>
           </div>
           <div className="col-lg-4 text-center">
             <h5 className="mb-2">Phone</h5>

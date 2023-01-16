@@ -12,6 +12,14 @@ const Navigation = () => {
         <Link className="navbar-brand text-black" to="/">
           HOME
         </Link>
+        <div className="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+          <button className="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon">
+              <i />
+            </span>
+          </button>
+        </div>
+
         <div className="collapse navbar-collapse" id="mainNavbarTheme">
           <ul className="navbar-nav ms-auto pe-10">
             {navItem.map((item, i) => (
