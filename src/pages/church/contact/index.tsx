@@ -2,6 +2,7 @@
 //https://navermaps.github.io/maps.js.ncp/docs/naver.maps.PointBounds.html
 import { useEffect, useRef } from "react";
 import "./style.css";
+import { isMobile } from 'react-device-detect';
 
 const index = () => {
   const mapElement = useRef(null);
@@ -35,26 +36,41 @@ const index = () => {
 
   }, []);
   const Click = (type: "naver" | "kakao") => {
-    const url = {
-      "naver": 'https://naver.me/5bXVTCOm',
-      "kakao": 'http://map.naver.com/index.nhn?enc=utf8&level=2&lng=' + lng + '&lat=' + lat,
+    if (isMobile) {
+      const url = {
+        "naver": `nmap://map?&lat=${lat}&lng=${lng}`,
+        "kakao": `kakaomap://look?p=${lng},${lat}`
+      }
+      window.open(url[type])
+    } else {
+      const url = {
+        "naver": 'https://naver.me/xnnB3BpP',
+        "kakao": 'http://kko.to/EgxzaPKG7i',
+      }
+      window.open(url[type])
     }
-    window.open(url[type])
   }
   return (
     <div className="">
       <div className="container py-9 py-lg-11">
         <div className="row mb-9 mb-lg-11">
-          <div className="col-lg-6 mb-5 mb-lg-0 text-center">
+          <div className="col-lg-4 mb-5 mb-lg-0 text-center">
             <h5 className="mb-2">주소</h5>
             <p className="mb-3 small">
               서울 강남구 영동대로 229 6층 D.LAB 어학원 (자연드림 대치점 6층)
             </p>
           </div>
-          <div className="col-lg-6 text-center">
+          <div className="col-lg-4 mb-5 mb-lg-0 text-center">
+            <h5 className="mb-2">지도 열기</h5>
+            <p className="mb-3 small">
+              <div className="btn btn-secondary" onClick={() => Click("naver")}>네이버맵에서 열기</div>
+              <div className="btn btn-secondary" onClick={() => Click("kakao")}>카카오맵에서 열기</div>
+            </p>
+          </div>
+          <div className="col-lg-4 text-center">
             <h5 className="mb-2">Phone</h5>
             <p className="mb-3 small">
-              편하게 언제든지 연락주세요
+              서울 강남구 영동대로 229 6층 D.LAB 어학원 (자연드림 대치점 6층)
             </p>
             <a href="#!" className="btn btn-sm btn-light border shadow-sm">
               <i className="bx bx-phone align-middle fw-normal me-1" /> 010-0000-0000
@@ -64,9 +80,9 @@ const index = () => {
         <div className="overflow-hidden mb-9 mb-lg-11 shadow border rounded-3">
           <div className="map" ref={mapElement}></div>
         </div>
+
       </div>
 
-      <div onClick={() => Click("naver")}>네이버맵에서 열기</div>
     </div>
   )
 }
