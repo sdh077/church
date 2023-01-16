@@ -39,7 +39,7 @@ const index = () => {
           </ul>
         </div>
         {scripts.map((script, i) => (
-          <div data-aos="fade-up" className="aos-init aos-animate">
+          <div data-aos="fade-up" className="aos-init aos-animate" key={i}>
             <Link to={`/article/${typeName}-${i}`} className="p-3 hover-lift hover-shadow rounded-3 border mb-3 d-block text-dark position-relative">
               <div className="d-flex justify-content-start w-100 mb-2 align-items-center">
                 <small className="text-muted">{script.date}</small>

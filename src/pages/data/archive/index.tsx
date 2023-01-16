@@ -61,19 +61,21 @@ const index = () => {
         </ul>
         <div className="row position-relative z-index-1">
           {items.map((item, i) => (
-            <div className="col-lg-4 mb-7 mb-lg-0" key={i}>
+            <div className="col-lg-12 mb-7 mb-lg-0 my-3" key={i}>
               <Link to={`/archive/${i}`}>
-                <article className="card-hover hover-lift">
-                  <div className="position-relative rounded-5 overflow-hidden">
-                    <img src={`https://i.ytimg.com/vi/${item.link}/hq720.jpg`} className="img-fluid img-zoom" alt="" />
-                  </div>
-                  <div className="pt-4 px-4">
-                    <h5 className="link-multiline">
-                      {item.title}
-                    </h5>
-                    <p className="mb-0 pt-3 text-muted small">
-                      {item.content}
-                    </p>
+                <article className="card-hover">
+                  <div className="row">
+                    <div className="position-relative rounded-5 overflow-hidden col-lg-4">
+                      <img src={`https://i.ytimg.com/vi/${item.link}/hq720.jpg`} className="img-fluid img-zoom" alt="" />
+                    </div>
+                    <div className="pt-4 px-4 col-lg-8">
+                      <h5 className="link-multiline">
+                        {item.title}
+                      </h5>
+                      <p className="mb-0 pt-3 text-muted small">
+                        {item.content}
+                      </p>
+                    </div>
                   </div>
                 </article>
               </Link>

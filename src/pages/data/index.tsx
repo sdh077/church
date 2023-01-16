@@ -1,6 +1,7 @@
 import "./style.css";
 
 const index = () => {
+  console.log('?')
   return (
     <div className="container">
       ?????
