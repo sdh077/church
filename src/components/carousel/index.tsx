@@ -6,25 +6,25 @@ import Scroll from '$components/motion/scroll';
 
 function ICarousel() {
   return (
-    <Carousel className='position-relative overflow-hidden bg-image carousel-custom'>
-      <Carousel.Item className='bg-dark position-relative'>
+    <Carousel fade={true} className='position-relative overflow-hidden bg-image'>
+      <Carousel.Item className='bg-dark c-img-wrap'>
         <img
-          className="d-block w-100 opacity-25"
-          src="img/1.jpg"
+          className="d-block opacity-50 carousel-custom"
+          src="img/carousel/1.jpg"
           alt="First slide"
         />
         <div className='position-absolute text'>
-          <FadeIn title={"Amsterdam Zuid nightwalk"} titleWidth={2} />
+          <FadeIn title={"그 사랑 교회"} titleWidth={2} />
         </div>
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className='bg-dark'>
+      <Carousel.Item className='bg-dark c-img-wrap'>
         <img
-          className="d-block w-100 opacity-25"
-          src="https://uigator.com/assan/4.8.5/public/assets/img/backgrounds/bg5.jpg"
+          className="d-block opacity-50 carousel-custom"
+          src="img/carousel/2.jpg"
           alt="Second slide"
         />
         <div className='position-absolute text c-text'>
@@ -35,10 +35,10 @@ function ICarousel() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className='bg-dark'>
+      <Carousel.Item className='bg-dark c-img-wrap'>
         <img
-          className="d-block w-100 opacity-25"
-          src="https://uigator.com/assan/4.8.5/public/assets/img/backgrounds/bg6.jpg"
+          className="d-block opacity-50 carousel-custom"
+          src="img/carousel/3.jpg"
           alt="Third slide"
         />
 

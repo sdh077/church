@@ -1,3 +1,4 @@
+import Login from "$pages/login";
 import type { RootState } from "$store/index";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
@@ -55,7 +56,7 @@ export const Routes = () => {
               return <Route key={path} path={path} element={<Forbidden />} />;
 
             if (!Array.isArray(roles) && userRole !== roles)
-              return <Route key={path} path={path} element={<Forbidden />} />;
+              return <Route key={path} path={path} element={<Login />} />;
 
             return <Route key={path} path={path} element={<Component />} />;
           }

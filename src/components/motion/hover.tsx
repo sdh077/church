@@ -6,7 +6,7 @@ interface Props {
 }
 const Hover = ({ children }: Props) => {
     return (
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} >
+        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 1 }} >
             {children}
         </motion.div>
     );

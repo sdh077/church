@@ -1,19 +1,42 @@
 import React, { useState } from "react";
-import "./style.css";
-import Pagination from 'react-bootstrap/Pagination';
+import "./style.scss";
 
-const IPagination = () => {
-    let active = 2;
-    let items = [];
-    for (let number = 1; number <= 5; number++) {
-        items.push(
-            <Pagination.Item key={number} active={number === active}>
-                {number}
-            </Pagination.Item>,
-        );
+const IPagination = ({ action, pageNo, pageSize }: {
+    action: Function;
+    pageNo: number;
+    pageSize: number
+}) => {
+    const items = [
+        <li onClick={() => action(1)} key={0}>
+            <a className="page-link" href="#">
+                <i className="bx bx-first-page"></i>
+            </a>
+        </li>
+    ];
+    for (let number = pageNo - 2; number <= pageNo + 2; number++) {
+        if (number > 0 && number <= pageSize)
+            items.push(
+                <li className={`page-item ${number === pageNo ? 'active' : ''}`} onClick={() => action(number)} key={number}>
+                    <button className="page-link">
+                        {number}
+                    </button>
+                </li>,
+            );
     }
+    items.push(
+        <li onClick={() => action(pageSize)} key={-1}>
+            <a className="page-link" href="#">
+                <i className="bx bx-last-page"></i>
+            </a>
+        </li>)
+
     return (
-        <Pagination bsPrefix="p-main-color pagination">{items}</Pagination>
+        <nav className="Page navigation">
+            <ul className="pagination">
+                {items}
+            </ul >
+        </nav>
+
     );
 };
 

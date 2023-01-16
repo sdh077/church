@@ -3,7 +3,6 @@ import './style.css'
 function BreadCrumb() {
     const location = useLocation();
     const items = location.pathname.split('/')
-    console.log(items.length, location.pathname)
     return (
         <ol className="breadcrumb mb-0">
             <li className="main-color breadcrumb-item"><Link to="/">Home</Link></li>

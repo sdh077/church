@@ -1,5 +1,8 @@
 .card-hover-2 {
     background-color: #110f1a;
+    display: block;
+    color: currentColor;
+    overflow: hidden;
 }
 
 .card-hover-2-overlay {

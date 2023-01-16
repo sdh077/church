@@ -1,6 +1,6 @@
 import { RootState } from '$store/index';
 import { useState } from 'react';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css'
 interface item {

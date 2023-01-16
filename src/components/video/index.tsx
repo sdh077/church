@@ -18,7 +18,7 @@ const IVideo = ({ link, type }: props) => {
         </div>
     const opts = {
         height: '480',
-        width: '800',
+        width: '100%',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 0,
@@ -28,8 +28,8 @@ const IVideo = ({ link, type }: props) => {
         <YouTube
             videoId={link}                  // defaults -> ''
             opts={opts}
-        // id={string}                       // defaults -> ''
-        // className={string}                // defaults -> ''
+            // id={string}                       // defaults -> ''
+            // className={class}                // defaults -> ''
         // iframeClassName={string}          // defaults -> ''
         // style={object}                    // defaults -> {}
         // title={string}                    // defaults -> ''

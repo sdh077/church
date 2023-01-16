@@ -1,0 +1,61 @@
+[
+    {
+        "title": "Church",
+        "link": "/church",
+        "items": [
+            {
+                "title": "소개",
+                "link": "/church"
+            },
+            {
+                "title": "Worship",
+                "link": "/church/worship"
+            },
+            {
+                "title": "사역",
+                "link": "/church/ministry"
+            },
+            {
+                "title": "오시는 길",
+                "link": "/church/contact"
+            },
+            {
+                "title": "달력",
+                "link": "/church/calendar"
+            }
+        ]
+    },
+    {
+        "title": "About",
+        "link": "/about",
+        "items": [
+            {
+                "title": "About",
+                "link": "/about"
+            },
+            {
+                "title": "Minister",
+                "link": "/about/minister"
+            }
+            
+        ]
+    },
+    {
+        "title": "자료",
+        "link": "/data",
+        "items": [
+            {
+                "title": "Archive",
+                "link": "/data/archive"
+            },
+            {
+                "title": "Course",
+                "link": "/data/course"
+            },
+            {
+                "title": "Article",
+                "link": "/data/article"
+            }
+        ]
+    }
+]
