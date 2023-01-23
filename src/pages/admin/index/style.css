@@ -140,22 +140,11 @@
 
 .react-calendar__tile--active {
     position: relative;
-}
-
-.react-calendar__tile--active:after {
-    content: '•';
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    color: #f78536;
+    border: 1px solid #f78536 !important;
+    border-radius: 25% !important;
 }
 
 .react-calendar {
     border: 0px solid #a0a096 !important;
     width: 100%;
-}
-
-.highlight {
-    border: 1px solid #f78536 !important;
-    border-radius: 25% !important;
 }

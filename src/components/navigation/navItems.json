@@ -55,6 +55,10 @@
             {
                 "title": "Article",
                 "link": "/data/article"
+            },
+            {
+                "title": "주일예배",
+                "link": "/data/worship"
             }
         ]
     }

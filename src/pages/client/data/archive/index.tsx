@@ -62,7 +62,7 @@ const index = () => {
         <div className="row position-relative z-index-1">
           {items.map((item, i) => (
             <div className="col-lg-12 mb-7 mb-lg-0 my-3" key={i}>
-              <Link to={`/archive/${i}`}>
+              <Link to={`/data/archive/${i}`}>
                 <article className="card-hover">
                   <div className="row">
                     <div className="position-relative rounded-5 overflow-hidden col-lg-4">

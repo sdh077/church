@@ -1,4 +1,4 @@
-import Navigation from "$components/navigation/nav2";
+import Navigation from "$components/navigation/nav_admin";
 import '$assets/scss/bootstrap.scss'
 import '$assets/css/theme.css'
 import Footer from "$components/footer/type2";
@@ -21,11 +21,9 @@ const App = ({ children: component }: Props) => {
   }, [])
   return (
     <div className="design-theme">
-      {/* Navigation */}
       <Navigation/>
       {/* Component */}
       {component}
-      <Footer/>
     </div>
   );
 };

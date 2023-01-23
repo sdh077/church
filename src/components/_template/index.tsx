@@ -4,7 +4,7 @@ import "./style.css";
 const Index = () => {
     
     return (
-        <div className="tableLayer">
+        <div className="">
             
         </div>
     );

@@ -38,7 +38,7 @@ const index = () => {
   const Click = (type: "naver" | "kakao") => {
     if (isMobile) {
       const url = {
-        "naver": `nmap://map?&lat=${lat}&lng=${lng}`,
+        "naver": `https://naver.me/xnnB3BpP`,
         "kakao": `kakaomap://look?p=${lng},${lat}`
       }
       window.open(url[type])
@@ -63,8 +63,12 @@ const index = () => {
           <div className="col-lg-4 mb-5 mb-lg-0 text-center">
             <h5 className="mb-2">지도 열기</h5>
             <div className="mb-3 small">
-              <div className="btn btn-secondary" onClick={() => Click("naver")}>네이버맵에서 열기</div>
-              <div className="btn btn-secondary" onClick={() => Click("kakao")}>카카오맵에서 열기</div>
+              <a href="#!" className="btn btn-sm btn-light border shadow-sm" onClick={() => Click("naver")}>
+                <i className="bx bx-map align-middle fw-normal me-1" /> 네이버맵에서 열기
+              </a>
+              <a href="#!" className="btn btn-sm btn-light border shadow-sm" onClick={() => Click("kakao")}>
+                <i className="bx bx-map align-middle fw-normal me-1" /> 카카오맵에서 열기
+              </a>
             </div>
           </div>
           <div className="col-lg-4 text-center">
