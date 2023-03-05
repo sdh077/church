@@ -9,7 +9,7 @@ import "./style.css";
 const index = () => {
   const [items, setItems] = useState<worship[]>([])
   useEffect(() => {
-    WorshipService.getAll()
+    WorshipService.getAll(0)
       .then(r => setItems(r.data))
       .catch((e: Error) => {
         console.log(e);

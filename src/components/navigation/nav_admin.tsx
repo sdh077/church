@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light mb-5">
       <div className="container position-relative">
-        <Link className="navbar-brand text-black" to="/">
+        <Link className="navbar-brand text-black" to="/admin">
           HOME
         </Link>
         <div className="d-flex align-items-center navbar-no-collapse-items order-lg-last">

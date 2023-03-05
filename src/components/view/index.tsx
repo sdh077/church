@@ -1,7 +1,7 @@
 import Video from "$components/video";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -9,23 +9,25 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import "./style.css";
+import IFile from "$types/file";
+import { IWorshipImg } from "$types/worship";
 interface file {
     name: string;
     link: string;
 }
-interface props {
+interface props<T> {
     type: string;
     link: string;
     title: string;
     subTitle: string;
-    imgs: string[];
-    file: file[];
+    imgs: T[];
+    file: T[];
 }
-const Index = ({ type, link, title, subTitle, imgs, file }: props) => {
+const Index = ({ type, link, title, subTitle, imgs, file }: props<IWorshipImg>) => {
 
     return (
         <div className="row">
-            <div className="col-md-7">
+            <div className="col-md-7 p-0">
                 <Video type={type} link={link} />
                 <h2 className="mb-3 display-7 mt-5 fw-normal">
                     {title}
@@ -34,11 +36,10 @@ const Index = ({ type, link, title, subTitle, imgs, file }: props) => {
                     {subTitle}
                 </p>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-5 p-0">
                 <Swiper
                     // install Swiper modules
-                    modules={[Navigation, Pagination, Scrollbar, A11y, Mousewheel]}
-                    mousewheel={true}
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={0}
                     slidesPerView={1}
                     navigation
@@ -50,7 +51,7 @@ const Index = ({ type, link, title, subTitle, imgs, file }: props) => {
                     {imgs.map((img, i) => (
                         <SwiperSlide key={i}>
                             <div className="img-wrap">
-                                <img src={img} />
+                                <img src={img.link} />
                             </div>
                         </SwiperSlide>
                     ))}
@@ -64,7 +65,7 @@ const Index = ({ type, link, title, subTitle, imgs, file }: props) => {
                 <div className="container py-9 py-lg-11">
                     <div className="row">
                         {Array.from({ length: 5 }).map((_, i) => (
-                            <div className="col-12 col-md-8 col-lg-4 col-xl-5 mb-4" key={i}>
+                            <div className="col-12 col-md-8 col-lg-6 col-xl-4 mb-4" key={i}>
                                 <Link to="#!" className="card-hover p-4 border d-flex flex-row hover-shadow-lg align-items-center rounded-3 hover-lift">
                                     <div className="me-4 rounded-3 flex-shrink-0 overflow-hidden">
 

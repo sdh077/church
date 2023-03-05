@@ -1,7 +1,4 @@
 import Navigation from "$components/navigation/nav_admin";
-import '$assets/scss/bootstrap.scss'
-import '$assets/css/theme.css'
-import Footer from "$components/footer/type2";
 import 'boxicons'
 import AOS from "aos";
 import "aos/dist/aos.css";

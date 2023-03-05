@@ -10,7 +10,7 @@ const Navigation = () => {
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container position-relative">
         <Link className="navbar-brand text-black" to="/">
-          HOME
+          그사랑교회
         </Link>
         <div className="d-flex align-items-center navbar-no-collapse-items order-lg-last">
           <button className="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false" aria-label="Toggle navigation">

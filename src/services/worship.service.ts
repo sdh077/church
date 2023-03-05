@@ -1,21 +1,26 @@
 import http from "./http-common";
-import worship from "../types/worship";
+import httpImage from "./http-common-image";
+import worship, { IWorshipImg } from "../types/worship";
 
 interface worshipApi {
   items: Array<worship>;
   pageNo: number;
   pageSize: number;
 }
-const getAll = () => {
-  return http.get<worship[]>(`/worship`);
+const getAll = (type: any) => {
+  return http.get<worship[]>(`/worship?type=${type}`);
 };
 
 const get = (id: any) => {
   return http.get<worship>(`/worship/${id}`);
 };
+const getImage = (id: any) => {
+  return http.get<IWorshipImg[]>(`/worship/img/${id}`);
+}
+const upload = (id: any, data: FormData) => httpImage.post<any>(`/worship/upload/${id}`, data);
 
 const create = (data: worship) => {
-  return http.post<worship>("/worship", data);
+  return http.post<{ insertId: number }>("/worship", data);
 };
 
 const update = (id: any, data: worship) => {
@@ -24,6 +29,9 @@ const update = (id: any, data: worship) => {
 
 const remove = (id: any) => {
   return http.delete<any>(`/worship/${id}`);
+};
+const removeImg = (id: any, link: string) => {
+  return http.delete<any>(`/worship/img/${id}?path=${link}`);
 };
 
 const removeAll = () => {
@@ -40,8 +48,11 @@ const WorshipService = {
   create,
   update,
   remove,
+  removeImg,
   removeAll,
   findByTitle,
+  getImage,
+  upload
 };
 
 export default WorshipService;

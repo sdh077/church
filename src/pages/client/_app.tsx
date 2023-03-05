@@ -5,7 +5,7 @@ import Footer from "$components/footer/type2";
 import 'boxicons'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import '$assets/js/bootstrap.js'
 
 
@@ -19,15 +19,13 @@ const App = ({ children: component }: Props) => {
       duration: 1000
     });
   }, [])
-  console.log(component)
-
   return (
-    <div className="design-theme">
+    <div className="design-theme" >
       {/* Navigation */}
-      <Navigation/>
+      <Navigation />
       {/* Component */}
       {component}
-      <Footer/>
+      <Footer />
     </div>
   );
 };

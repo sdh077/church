@@ -24,12 +24,13 @@ const IVideo = ({ link, type }: props) => {
             autoplay: 0,
         },
     };
+    console.log('link',link)
     const youtube =
         <YouTube
             videoId={link}                  // defaults -> ''
             opts={opts}
-            // id={string}                       // defaults -> ''
-            // className={class}                // defaults -> ''
+        // id={string}                       // defaults -> ''
+        // className={class}                // defaults -> ''
         // iframeClassName={string}          // defaults -> ''
         // style={object}                    // defaults -> {}
         // title={string}                    // defaults -> ''
@@ -45,7 +46,7 @@ const IVideo = ({ link, type }: props) => {
         />
     return (
         <>
-            {type === "youtube" ? youtube : video}
+            {youtube}
         </>
     )
 }

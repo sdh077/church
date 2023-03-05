@@ -62,80 +62,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-    --bs-blue: #0061ff;
-    --bs-indigo: #7360f2;
-    --bs-purple: #6f42c1;
-    --bs-pink: #f94770;
-    --bs-red: #dc3545;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ffd751;
-    --bs-green: #35a552;
-    --bs-teal: #20c997;
-    --bs-cyan: #00c2ff;
-    --bs-black: #110f1a;
-    --bs-white: #fff;
-    --bs-gray: #524b6a;
-    --bs-gray-dark: #262136;
-    --bs-gray-100: #f9f8fc;
-    --bs-gray-200: #eae8f0;
-    --bs-gray-300: #e6e5ec;
-    --bs-gray-400: #c7c3d3;
-    --bs-gray-500: #8a8793;
-    --bs-gray-600: #524b6a;
-    --bs-gray-700: #352f4a;
-    --bs-gray-800: #262136;
-    --bs-gray-900: #1a1726;
-    --bs-primary: #7360f2;
-    --bs-secondary: #352f4a;
-    --bs-success: #35a552;
-    --bs-info: #00c2ff;
-    --bs-warning: #ffd751;
-    --bs-danger: #f94770;
-    --bs-light: #f9f8fc;
-    --bs-white: #fff;
-    --bs-dark: #110f1a;
-    --bs-gray-200: #eae8f0;
-    --bs-gray-800: #262136;
-    --bs-primary-rgb: 115, 96, 242;
-    --bs-secondary-rgb: 53, 47, 74;
-    --bs-success-rgb: 53, 165, 82;
-    --bs-info-rgb: 0, 194, 255;
-    --bs-warning-rgb: 255, 215, 81;
-    --bs-danger-rgb: 249, 71, 112;
-    --bs-light-rgb: 249, 248, 252;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-dark-rgb: 17, 15, 26;
-    --bs-gray-200-rgb: 234, 232, 240;
-    --bs-gray-800-rgb: 38, 33, 54;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-black-rgb: 17, 15, 26;
-    --bs-body-color-rgb: 26, 23, 38;
-    --bs-body-bg-rgb: 255, 255, 255;
-    --bs-font-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --bs-body-font-family: var(--bs-font-sans-serif);
-    --bs-body-font-size: 1rem;
-    --bs-body-font-weight: 400;
-    --bs-body-line-height: 1.6;
-    --bs-body-color: #1a1726;
-    --bs-body-bg: #fff;
-    --bs-border-width: 1px;
-    --bs-border-style: solid;
-    --bs-border-color: #eae8f0;
-    --bs-border-color-translucent: rgba(17, 15, 26, 0.125);
-    --bs-border-radius: 0.475rem;
-    --bs-border-radius-sm: 0.325rem;
-    --bs-border-radius-lg: 0.725rem;
-    --bs-border-radius-xl: 1.25rem;
-    --bs-border-radius-2xl: 2.5rem;
-    --bs-border-radius-pill: 50rem;
-    --bs-link-color: #7360f2;
-    --bs-link-hover-color: #5c4dc2;
-    --bs-code-color: #f94770;
-    --bs-highlight-bg: #fff7dc;
-    --swiper-navigation-size: 44px;
-
     --bs-pagination-padding-x: 0.75rem;
     --bs-pagination-padding-y: 0.375rem;
     --bs-pagination-font-size: 1rem;
@@ -24143,8 +24069,6 @@ header.header-transparent.sticky-fixed.is-fixed .navbar-dark .navbar-fixed-bg {
     justify-content: center;
     line-height: 1;
     border-radius: 2.5rem;
-    background-color: #dcd7fc;
-    color: #110f1a;
     transition: all .25s
 }
 
@@ -24167,7 +24091,6 @@ header.header-transparent.sticky-fixed.is-fixed .navbar-dark .navbar-fixed-bg {
     top: 50%;
     width: 10px;
     height: 2px;
-    background: currentColor;
     transition: transform .6s cubic-bezier(.19, 1, .22, 1), opacity .5s cubic-bezier(.19, 1, .22, 1);
     transform: translate(-50%, -50%) scaleX(.5);
     transform-origin: right;

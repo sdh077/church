@@ -1,9 +1,20 @@
 import Video from "$components/video";
+import WorshipService from "$services/worship.service";
+import worship from "$types/worship";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import ID from './[id]';
 const index = () => {
-  const items = [
+  const [items, setItems] = useState<worship[]>([])
+  useEffect(() => {
+    WorshipService.getAll(1)
+      .then(r => setItems(r.data))
+      .catch((e: Error) => {
+        console.log(e);
+      });
+  }, []);
+  const itemss = [
     {
       title: ['우리 시대의 교회론'],
       content: `고상섭목사의 '우리시대의 교회론-팀켈러를 중심으로' 1부 by 한미준 온라인 스쿨`,
@@ -62,7 +73,7 @@ const index = () => {
         <div className="row position-relative z-index-1">
           {items.map((item, i) => (
             <div className="col-lg-12 mb-7 mb-lg-0 my-3" key={i}>
-              <Link to={`/data/archive/${i}`}>
+              <Link to={`/data/archive/${item.worship_no}`}>
                 <article className="card-hover">
                   <div className="row">
                     <div className="position-relative rounded-5 overflow-hidden col-lg-4">
@@ -73,7 +84,7 @@ const index = () => {
                         {item.title}
                       </h5>
                       <p className="mb-0 pt-3 text-muted small">
-                        {item.content}
+                        {item.subTitle}
                       </p>
                     </div>
                   </div>

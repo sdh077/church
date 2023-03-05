@@ -8,14 +8,6 @@
                 "link": "/church"
             },
             {
-                "title": "예배",
-                "link": "/church/worship"
-            },
-            {
-                "title": "사역",
-                "link": "/church/ministry"
-            },
-            {
                 "title": "오시는 길",
                 "link": "/church/contact"
             },
@@ -29,10 +21,6 @@
         "title": "About",
         "link": "/about",
         "items": [
-            {
-                "title": "About",
-                "link": "/about"
-            },
             {
                 "title": "Minister",
                 "link": "/about/minister"

@@ -1,0 +1,10 @@
+.thumbnail-wrap {
+    display: inline-block;
+    width: 300px;
+    position: relative;
+}
+.thumbnail-del {
+    position: absolute;
+    top: 0;
+    right: 0%;
+}

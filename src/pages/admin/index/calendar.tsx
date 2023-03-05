@@ -22,13 +22,8 @@ const index = () => {
       {}
   })
   const changeDate = (date: Date) => {
-    handleChange('date', dateForm(date));
     const index = items.findIndex(item => item.date.slice(0, 10) === dateForm(date))
-    if (index === -1) {
-      handleChange('link', '')
-    } else {
-      setCalendar(items[index])
-    }
+    setCalendar(index === -1 ? { calendar_no: -1, link: '', date: dateForm(date) } : items[index])
   }
   const retrieve = () => CalendarService.getAll()
     .then(r => setItems(r.data))

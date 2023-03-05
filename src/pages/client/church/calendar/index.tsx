@@ -6,31 +6,25 @@ import moment from 'moment';
 import ICalendar from "$types/calendar";
 import CalendarService from "$services/calendar.service";
 import { useEffectOnce } from "usehooks-ts";
-import { dateForm } from "$services/function";
+import { dateForm, handleChange } from "$services/function";
 
 const index = () => {
   const [calendar, setCalendar] = useState<ICalendar>({ calendar_no: -1, link: '', date: dateForm(new Date()) });
   const [items, setItems] = useState<ICalendar[]>([]);
-  const handleChange = (name: string, value: any) => setCalendar({ ...calendar, [name]: value, })
   useEffect(() => {
-    changeDate(new Date());
-  }, [items]);
+  }, []);
   useEffectOnce(() => {
     CalendarService.getAll()
       .then(r => setItems(r.data))
+      .then(_ => changeDate(new Date()))
       .catch((e: Error) => {
         console.log(e);
       }),
       {}
   })
   const changeDate = (date: Date) => {
-    handleChange('date', dateForm(date));
     const index = items.findIndex(item => item.date.slice(0, 10) === dateForm(date))
-    if (index === -1) {
-      handleChange('link', '')
-    } else {
-      setCalendar(items[index])
-    }
+    setCalendar(index === -1 ? { calendar_no: -1, link: '', date: dateForm(date) } : items[index])
   }
   return (
     <div className="container">
@@ -48,7 +42,9 @@ const index = () => {
         </div>
         <div className="col-md-6 mx-auto">
           {moment(calendar.date).format("YYYY년 MM월 DD일")}
-          <Video link={calendar.link} type={"youtube"} />
+          {calendar.link && <div>
+            <Video link={calendar.link} type={"youtube"} />
+          </div>}
         </div>
       </div>
     </div>
