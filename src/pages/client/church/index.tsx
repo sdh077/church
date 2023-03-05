@@ -40,7 +40,7 @@ const index = () => {
           <div className="col-lg-6 order-1 order-last mb-5 mb-lg-0">
             <div className="position-relative aos-init aos-animate" data-aos="fade-up" data-aos-delay={150}>
               {/*feature image*/}
-              <img className="img-fluid rounded-5 shadow-lg position-relative" alt="" src="/public/img/church/6.jpeg" />
+              <img className="img-fluid rounded-5 shadow-lg position-relative" alt="" src="/img/church/6.jpeg" />
             </div>
           </div>
           <div className="col-lg-6 order-1 order-last mb-5 mb-lg-0">
@@ -69,7 +69,7 @@ const index = () => {
             <div className="col-lg-6 order-1 order-last mb-5 mb-lg-0">
               <div className="position-relative aos-init aos-animate" data-aos="fade-up" data-aos-delay={150}>
                 {/*feature image*/}
-                <img className="img-fluid rounded-5 shadow-lg position-relative" alt="" src="/public/img/church/7.jpeg" />
+                <img className="img-fluid rounded-5 shadow-lg position-relative" alt="" src="/img/church/7.jpeg" />
               </div>
             </div>
             <div className="mx-auto col-lg-6 col-xl-4 order-last order-lg-1">

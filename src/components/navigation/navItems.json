@@ -10,10 +10,6 @@
             {
                 "title": "오시는 길",
                 "link": "/church/contact"
-            },
-            {
-                "title": "달력",
-                "link": "/church/calendar"
             }
         ]
     },
@@ -43,10 +39,6 @@
             {
                 "title": "Article",
                 "link": "/data/article"
-            },
-            {
-                "title": "주일예배",
-                "link": "/data/worship"
             }
         ]
     }
