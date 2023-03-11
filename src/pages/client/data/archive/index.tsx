@@ -4,43 +4,71 @@ import worship from "$types/worship";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import ID from './[id]';
+import { Client } from "@notionhq/client"
 const index = () => {
-  const [items, setItems] = useState<worship[]>([])
+  const [items, setItems] = useState<any>([])
+  // const filter = (item: any) => filterType[item.type]
   useEffect(() => {
-    WorshipService.getAll(1)
-      .then(r => setItems(r.data))
-      .catch((e: Error) => {
-        console.log(e);
-      });
+    fetch('https://church-back.vercel.app/api/hello', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({
+        db: 'f736feaa640f491baecf22573737ad1a'
+      })
+    }).then(res => res.json()).then(res => {
+      console.log(res)
+      setItems(res.map((page: any) => {
+        return {
+          id: page.id,
+          worship_no: page.properties.worship_no.title[0]?.text.content,
+          title: page.properties.title.rich_text[0]?.text.content,
+          link: page.properties.link.rich_text[0]?.text.content,
+          subTitle: page.properties.subTitle.rich_text[0]?.text.content,
+        };
+      }));
+    });
   }, []);
-  const itemss = [
-    {
-      title: ['우리 시대의 교회론'],
-      content: `고상섭목사의 '우리시대의 교회론-팀켈러를 중심으로' 1부 by 한미준 온라인 스쿨`,
-      link: 'ZsT6E3EnxHU'
-    },
-    {
-      title: ['고상섭 목사_슬기로운 독서생활'],
-      content: `TGC코리아 일일세미나`,
-      link: '1XjY-udGVoA'
-    },
-    {
-      title: ['목회자와 독서'],
-      content: `2022년 9월 포럼`,
-      link: 'Z-znJzPyYgQ'
-    },
-    {
-      title: ['고상섭목사의 팀켈러의 센터처치, 그리고 도시목회적용'],
-      content: ``,
-      link: '3_UVh2mJ0FI'
-    },
-    {
-      title: ['그리스도 중심 성경읽기 - 가이드 영상'],
-      content: `43 | 시편 117~132편 | 고상섭 목사`,
-      link: '9ljCYrhmYkY'
-    }
-  ]
+
+  // const items = [
+  //   {
+  //     worship_no: 1,
+  //     title: ['우리 시대의 교회론'],
+  //     content: `고상섭목사의 '우리시대의 교회론-팀켈러를 중심으로' 1부 by 한미준 온라인 스쿨`,
+  //     link: 'ZsT6E3EnxHU',
+  //     subTitle: ''
+  //   },
+  //   {
+  //     worship_no: 2,
+  //     title: ['고상섭 목사_슬기로운 독서생활'],
+  //     content: `TGC코리아 일일세미나`,
+  //     link: '1XjY-udGVoA',
+  //     subTitle: ''
+  //   },
+  //   {
+  //     worship_no: 3,
+  //     title: ['목회자와 독서'],
+  //     content: `2022년 9월 포럼`,
+  //     link: 'Z-znJzPyYgQ',
+  //     subTitle: ''
+  //   },
+  //   {
+  //     worship_no: 4,
+  //     title: ['고상섭목사의 팀켈러의 센터처치, 그리고 도시목회적용'],
+  //     content: ``,
+  //     link: '3_UVh2mJ0FI',
+  //     subTitle: ''
+  //   },
+  //   {
+  //     worship_no: 5,
+  //     title: ['그리스도 중심 성경읽기 - 가이드 영상'],
+  //     content: `43 | 시편 117~132편 | 고상섭 목사`,
+  //     link: '9ljCYrhmYkY',
+  //     subTitle: ''
+  //   }
+  // ]
   return (
     <div>
       <div className="container position-relative mt-6">
@@ -71,9 +99,9 @@ const index = () => {
           </li>
         </ul>
         <div className="row position-relative z-index-1">
-          {items.map((item, i) => (
-            <div className="col-lg-12 mb-7 mb-lg-0 my-3" key={i}>
-              <Link to={`/data/archive/${item.worship_no}`}>
+          {items.map((item: any, i: number) => (
+            <div className="col-lg-6 mb-7 mb-lg-0 my-3" key={i}>
+              <Link to={`/data/archive/${item.id}`}>
                 <article className="card-hover">
                   <div className="row">
                     <div className="position-relative rounded-5 overflow-hidden col-lg-4">
